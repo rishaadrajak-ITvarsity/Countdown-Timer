@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Timer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontAwesome/css/all.css">
+</head>
+<body>
+    <div class="container">
+        
+        <svg id="clockContainer" width="360" height="360">
+            <defs>
+                <pattern id="pattern1" x="3" y="3" width="12" height="12" patternUnits="userSpaceOnUse">
+                    <circle 
+                        cx="5" cy="5" r="3" stroke="0" fill="white">
+                    </circle>
+                </pattern>
+            </defs>
+            
+            <!--making the clock-->
+            <circle 
+                id="clockFace"
+                cx="180" cy="180" r="150"
+                stroke="blue" stroke-width="6"
+                fill="#343635"
+            ></circle>
+
+            <g
+                id="secondHand"
+                style="transform-origin:180px 180px;"
+            >
+                <path 
+                    class="hand" d="M180 230V60"
+                    style="fill:none;stroke:#c2c2c2;
+                            stroke-width:4;stroke-miterlimit:10;"
+                ></path>
+                <circle
+                    class="size-box"
+                    cx="180" cy="180" r="150"
+                    fill="none"
+                ></circle>
+            </g>
+            <g
+                id="minuteHand"
+                style="transform-origin:180px 180px;"
+            >
+                <path 
+                    class="hand" d="M180 220V100"
+                    style="fill:none;stroke:#c2c2c2;
+                            stroke-width:7;stroke-miterlimit:10;"
+                ></path>
+                <circle
+                    class="size-box"
+                    cx="180" cy="180" r="150"
+                    fill="none"
+                ></circle>
+            </g>
+            <g
+                id="hourHand"
+                style="transform-origin: 180px 180px;"
+            >
+                <path 
+                    class="hand" d="M180 210V125"
+                    style="fill:none;stroke:#c2c2c2;
+                            stroke-width:10;stroke-miterlimit:10;"
+                ></path>
+                <circle
+                    class="size-box"
+                    cx="180" cy="180" r="150"
+                    fill="none"
+                ></circle>
+            </g>
+
+            <circle 
+                id="pin"
+                cx="180" cy="180" r="6" 
+                stroke="black" stroke-width="0"
+                fill="blue">
+            </circle>
+
+        </svg>
+
+        <div id="clock">
+            <p>Ready!</p>
+        </div>
+
+        <div id="content">
+            <select class="selector" id="hours">
+                <option value="0">0 hours</option>
+                <option value="1">1 hour</option>
+                <option value="2">2 hours</option>
+                <option value="3">3 hours</option>
+                <option value="4">4 hours</option>
+                <option value="5">5 hours</option>
+                <option value="6">6 hours</option>
+                <option value="7">7 hours</option>
+                <option value="8">8 hours</option>
+                <option value="9">9 hours</option>
+                <option value="10">10 hours</option>
+                <option value="11">11 hours</option>
+                <option value="12">12 hours</option>
+                <option value="13">13 hours</option>
+                <option value="14">14 hours</option>
+                <option value="15">15 hours</option>
+                <option value="16">16 hours</option>
+                <option value="17">17 hours</option>
+                <option value="18">18 hours</option>
+                <option value="19">19 hours</option>
+                <option value="20">20 hours</option>
+                <option value="21">21 hours</option>
+                <option value="22">22 hours</option>
+                <option value="23">23 hours</option>
+            </select>
+            <select class="selector" id="minutes">
+                <option value="0">0 mins</option>
+                <option value="1">1 min</option>
+                <option value="2">2 mins</option>
+                <option value="3">3 mins</option>
+                <option value="4">4 mins</option>
+                <option value="5">5 mins</option>
+                <option value="6">6 mins</option>
+                <option value="7">7 mins</option>
+                <option value="8">8 mins</option>
+                <option value="9">9 mins</option>
+                <option value="10">10 mins</option>
+                <option value="11">11 mins</option>
+                <option value="12">12 mins</option>
+                <option value="13">13 mins</option>
+                <option value="14">14 mins</option>
+                <option value="15">15 mins</option>
+                <option value="16">16 mins</option>
+                <option value="17">17 mins</option>
+                <option value="18">18 mins</option>
+                <option value="19">19 mins</option>
+                <option value="20">20 mins</option>
+                <option value="21">21 mins</option>
+                <option value="22">22 mins</option>
+                <option value="23">23 mins</option>
+                <option value="24">24 mins</option>
+                <option value="25">25 mins</option>
+                <option value="26">26 mins</option>
+                <option value="27">27 mins</option>
+                <option value="28">28 mins</option>
+                <option value="29">29 mins</option>
+                <option value="30">30 mins</option>
+                <option value="31">31 mins</option>
+                <option value="32">32 mins</option>
+                <option value="33">33 mins</option>
+                <option value="34">34 mins</option>
+                <option value="35">35 mins</option>
+                <option value="36">36 mins</option>
+                <option value="37">37 mins</option>
+                <option value="38">38 mins</option>
+                <option value="39">39 mins</option>
+                <option value="40">40 mins</option>
+                <option value="41">41 mins</option>
+                <option value="42">42 mins</option>
+                <option value="43">43 mins</option>
+                <option value="44">44 mins</option>
+                <option value="45">45 mins</option>
+                <option value="46">46 mins</option>
+                <option value="47">47 mins</option>
+                <option value="48">48 mins</option>
+                <option value="49">49 mins</option>
+                <option value="50">50 mins</option>
+                <option value="51">51 mins</option>
+                <option value="52">52 mins</option>
+                <option value="53">53 mins</option>
+                <option value="54">54 mins</option>
+                <option value="55">55 mins</option>
+                <option value="56">56 mins</option>
+                <option value="57">57 mins</option>
+                <option value="58">58 mins</option>
+                <option value="59">59 mins</option>
+            </select>
+            <select class="selector" id="seconds">
+                <option value="0">0 sec</option>
+                <option value="1">1 sec</option>
+                <option value="2">2 sec</option>
+                <option value="3">3 sec</option>
+                <option value="4">4 sec</option>
+                <option value="5">5 sec</option>
+                <option value="6">6 sec</option>
+                <option value="7">7 sec</option>
+                <option value="8">8 sec</option>
+                <option value="9">9 sec</option>
+                <option value="10">10 sec</option>
+                <option value="11">11 sec</option>
+                <option value="12">12 sec</option>
+                <option value="13">13 sec</option>
+                <option value="14">14 sec</option>
+                <option value="15">15 sec</option>
+                <option value="16">16 sec</option>
+                <option value="17">17 sec</option>
+                <option value="18">18 sec</option>
+                <option value="19">19 sec</option>
+                <option value="20">20 sec</option>
+                <option value="21">21 sec</option>
+                <option value="22">22 sec</option>
+                <option value="23">23 sec</option>
+                <option value="24">24 sec</option>
+                <option value="25">25 sec</option>
+                <option value="26">26 sec</option>
+                <option value="27">27 sec</option>
+                <option value="28">28 sec</option>
+                <option value="29">29 sec</option>
+                <option value="30">30 sec</option>
+                <option value="31">31 sec</option>
+                <option value="32">32 sec</option>
+                <option value="33">33 sec</option>
+                <option value="34">34 sec</option>
+                <option value="35">35 sec</option>
+                <option value="36">36 sec</option>
+                <option value="37">37 sec</option>
+                <option value="38">38 sec</option>
+                <option value="39">39 sec</option>
+                <option value="40">40 sec</option>
+                <option value="41">41 sec</option>
+                <option value="42">42 sec</option>
+                <option value="43">43 sec</option>
+                <option value="44">44 sec</option>
+                <option value="45">45 sec</option>
+                <option value="46">46 sec</option>
+                <option value="47">47 sec</option>
+                <option value="48">48 sec</option>
+                <option value="49">49 sec</option>
+                <option value="50">50 sec</option>
+                <option value="51">51 sec</option>
+                <option value="52">52 sec</option>
+                <option value="53">53 sec</option>
+                <option value="54">54 sec</option>
+                <option value="55">55 sec</option>
+                <option value="56">56 sec</option>
+                <option value="57">57 sec</option>
+                <option value="58">58 sec</option>
+                <option value="59">59 sec</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="buttonSection">
+        <div class="button1">
+            <button class="roundButton" id="start">
+                <i class="fas fa-play"></i>
+            </button>
+        </div>
+        <div class="button2">
+            <button class="roundButton" id="cancel">
+                <i class="fas fa-stop"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("start").addEventListener('click', startTimer)
+        document.getElementById("cancel").addEventListener('click', cancelledButtonPressed)
+
+        let startTime
+        let endTime
+        let origTimePeriod
+        let newTimePeriod
+        let timer
+        let cancelled = false
+
+        const STARTBTN = document.querySelector("#start")
+        const CANCELBTN = document.querySelector("#cancel")
+        const CLOCKFACE = document.querySelector("#clockFace")
+        const PIN = document.querySelector("#pin")
+        const SECONDHAND = document.querySelector("#secondHand")
+        const MINUTEHAND = document.querySelector("#minuteHand")
+        const HOURHAND = document.querySelector("#hourHand")
+        let secPosition;
+        let minPosition;
+        let hourPosition;
+        let boxShadow = "box-shadow: 0 0 10px 2px white"
+
+        function startTimer(){
+            cancelled = false;
+            clearInterval(timer); // prevent error when user presses start more than once
+
+            startTime = new Date();
+            endTime = getEndTime();
+
+            origTimePeriod = endTime.getTime() - startTime.getTime();
+            newTimePeriod = origTimePeriod;
+
+            CLOCKFACE.style = "stroke:blue"
+            PIN.style = "fill:blue"
+            STARTBTN.style = "box-shadow:none"
+            CANCELBTN.style = boxShadow
+            
+            timer = setInterval(displayCountdown, 1000)
+        }
+
+        function displayCountdown(){
+            let timeLeft = msToTime(newTimePeriod)
+            
+            document.getElementById("clock").innerHTML = `<p>${timeLeft["hours"]} : ${timeLeft["minutes"]} : ${timeLeft["seconds"]}</p>`
+
+            secPosition = (timeLeft["seconds"] * 360) / 60
+            minPosition = (timeLeft["minutes"] * 360) / 60
+            hourPosition = (timeLeft["hours"] * 360) / 12
+
+            SECONDHAND.style.transform = "rotate("+secPosition+"deg)"
+            MINUTEHAND.style.transform = "rotate("+minPosition+"deg)"
+            HOURHAND.style.transform = "rotate("+hourPosition+"deg)"
+
+            newTimePeriod -= 1000
+
+            if(newTimePeriod < 0){
+                CLOCKFACE.style = "stroke:lightgreen"
+                PIN.style = "fill:lightgreen"
+                clearInterval(timer)
+                document.getElementById("clock").innerHTML = "<p>Complete!</p>"
+            }else{
+                if(cancelled){
+                    CLOCKFACE.style = "stroke:red"
+                    PIN.style = "fill:red"
+                    clearInterval(timer)
+                    document.getElementById("clock").innerHTML = "<p>Stopped!</p>"
+                }
+            }
+        }
+
+        function cancelledButtonPressed(){
+            cancelled = true;
+            STARTBTN.style = boxShadow
+            CANCELBTN.style = "box-shadow:none"
+        }
+
+        function msToTime(milliseconds){
+            let mHour = 1000 * 60 * 60
+            let mMinutes = 1000 * 60
+            let mSeconds = 1000
+
+            let hours = Math.floor(milliseconds / mHour)
+            let minutes = Math.floor((milliseconds % mHour) / mMinutes)
+            let seconds = Math.floor((milliseconds % mMinutes) / mSeconds)
+
+            let time = []
+            time["hours"] = hours
+            time["minutes"] = minutes
+            time["seconds"] = seconds
+
+            return time
+        }
+
+        function getEndTime(){
+            let dt = new Date()
+            let hours = parseInt(document.getElementById("hours").value)
+            let minutes = parseInt(document.getElementById("minutes").value)
+            let seconds = parseInt(document.getElementById("seconds").value)
+
+            dt.setHours(dt.getHours() + hours)
+            dt.setMinutes(dt.getMinutes() + minutes)
+            dt.setSeconds(dt.getSeconds() + seconds)
+            return dt
+        }
+    </script>
+</body>
+</html>
